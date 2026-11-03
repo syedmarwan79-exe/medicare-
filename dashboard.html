@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard | MediCare+</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                🩺 MediCare<span>+</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="doctors.html">Doctors</a></li>
+
+                <li><a href="appointment.html">Appointments</a></li>
+
+                <li><a href="lab-tests.html">Lab Tests</a></li>
+
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+
+            </ul>
+
+            <a href="appointment.html" class="nav-btn">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- DASHBOARD HERO -->
+
+    <section class="dashboard-hero">
+
+        <div class="dashboard-hero-content">
+
+            <div class="hero-badge">
+                📊 PATIENT DASHBOARD
+            </div>
+
+            <h1>
+                Welcome Back,
+                <span>Patient!</span>
+            </h1>
+
+            <p>
+                View your appointment statistics,
+                upcoming bookings and lab test
+                summary in one place.
+            </p>
+
+        </div>
+
+        <div class="dashboard-hero-image">
+
+            <img
+                src="https://ik.imagekit.io/nbunyo4rh/doc%205.jpg"
+                alt="Animated Dashboard Doctor"
+                class="dashboard-animated-doctor"
+            >
+
+            <div class="dash-floating-icon df-1">📊</div>
+
+            <div class="dash-floating-icon df-2">📅</div>
+
+            <div class="dash-floating-icon df-3">🧪</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATISTICS CARDS -->
+
+    <section class="stats-section">
+
+        <div class="section-title">
+
+            <span>OVERVIEW</span>
+
+            <h2>Your Healthcare Statistics</h2>
+
+            <p>
+                Quick summary of your demo bookings.
+            </p>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card stat-total">
+
+                <div class="stat-icon">📋</div>
+
+                <div class="stat-info">
+
+                    <h3 id="statTotal">0</h3>
+
+                    <p>Total Appointments</p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card stat-upcoming">
+
+                <div class="stat-icon">📅</div>
+
+                <div class="stat-info">
+
+                    <h3 id="statUpcoming">0</h3>
+
+                    <p>Upcoming</p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card stat-completed">
+
+                <div class="stat-icon">✅</div>
+
+                <div class="stat-info">
+
+                    <h3 id="statCompleted">0</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card stat-cancelled">
+
+                <div class="stat-icon">❌</div>
+
+                <div class="stat-info">
+
+                    <h3 id="statCancelled">0</h3>
+
+                    <p>Cancelled</p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card stat-lab">
+
+                <div class="stat-icon">🧪</div>
+
+                <div class="stat-info">
+
+                    <h3 id="statLab">0</h3>
+
+                    <p>Lab Tests Booked</p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card stat-doctors">
+
+                <div class="stat-icon">👨‍⚕️</div>
+
+                <div class="stat-info">
+
+                    <h3 id="statDoctors">6</h3>
+
+                    <p>Available Doctors</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROGRESS BARS -->
+
+    <section class="progress-section">
+
+        <div class="section-title">
+
+            <span>PERFORMANCE</span>
+
+            <h2>Booking Activity</h2>
+
+        </div>
+
+        <div class="progress-container">
+
+            <div class="progress-item">
+
+                <div class="progress-label">
+
+                    <span>Appointments Completion</span>
+
+                    <span id="completionPercent">0%</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill" id="completionBar"></div>
+
+                </div>
+
+            </div>
+
+            <div class="progress-item">
+
+                <div class="progress-label">
+
+                    <span>Cancellation Rate</span>
+
+                    <span id="cancelPercent">0%</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill cancel-fill" id="cancelBar"></div>
+
+                </div>
+
+            </div>
+
+            <div class="progress-item">
+
+                <div class="progress-label">
+
+                    <span>Lab Tests Activity</span>
+
+                    <span id="labPercent">0%</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill lab-fill" id="labBar"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- UPCOMING APPOINTMENTS -->
+
+    <section class="upcoming-section">
+
+        <div class="section-title">
+
+            <span>SCHEDULE</span>
+
+            <h2>Upcoming Appointments</h2>
+
+        </div>
+
+        <div class="upcoming-container" id="upcomingContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- RECENT LAB TESTS -->
+
+    <section class="recent-lab-section">
+
+        <div class="section-title">
+
+            <span>LAB RESULTS</span>
+
+            <h2>Recent Lab Bookings</h2>
+
+        </div>
+
+        <div class="recent-lab-container" id="recentLabContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- HEALTH TIPS -->
+
+    <section class="health-tips-section">
+
+        <div class="section-title">
+
+            <span>STAY HEALTHY</span>
+
+            <h2>Daily Health Tips</h2>
+
+            <p>
+                General wellness suggestions for a healthier lifestyle.
+            </p>
+
+        </div>
+
+        <div class="tips-grid">
+
+            <div class="tip-card">
+
+                <div class="tip-icon">💧</div>
+
+                <h3>Stay Hydrated</h3>
+
+                <p>
+                    Drink at least 8 glasses of water daily
+                    for better health.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <div class="tip-icon">🏃</div>
+
+                <h3>Exercise Daily</h3>
+
+                <p>
+                    30 minutes of physical activity
+                    keeps your body active.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <div class="tip-icon">😴</div>
+
+                <h3>Sleep Well</h3>
+
+                <p>
+                    Get 7-8 hours of quality sleep
+                    every night.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <div class="tip-icon">🥗</div>
+
+                <h3>Eat Healthy</h3>
+
+                <p>
+                    Include fruits, vegetables and
+                    proteins in your diet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="quick-actions-section">
+
+        <div class="section-title">
+
+            <span>QUICK ACTIONS</span>
+
+            <h2>What Would You Like To Do?</h2>
+
+        </div>
+
+        <div class="actions-grid">
+
+            <a href="appointment.html" class="action-card">
+
+                <div class="action-icon">📅</div>
+
+                <h3>Book Appointment</h3>
+
+                <p>Schedule a new doctor visit</p>
+
+            </a>
+
+            <a href="lab-tests.html" class="action-card">
+
+                <div class="action-icon">🧪</div>
+
+                <h3>Book Lab Test</h3>
+
+                <p>Schedule a diagnostic test</p>
+
+            </a>
+
+            <a href="doctors.html" class="action-card">
+
+                <div class="action-icon">👨‍⚕️</div>
+
+                <h3>Find Doctors</h3>
+
+                <p>Explore specialist doctors</p>
+
+            </a>
+
+            <a href="chatbot.html" class="action-card">
+
+                <div class="action-icon">🤖</div>
+
+                <h3>Smart Assistant</h3>
+
+                <p>Get help with navigation</p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <h2>🩺 MediCare+</h2>
+
+                <p>
+                    Smart Hospital Management &
+                    Patient Companion System.
+                </p>
+
+                <p>
+                    Educational project prototype.
+                    Not a real hospital service.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="doctors.html">Doctors</a>
+
+                <a href="appointment.html">Appointments</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Services</h3>
+
+                <a href="lab-tests.html">Lab Tests</a>
+
+                <a href="chatbot.html">Smart Assistant</a>
+
+                <a href="admin.html">Admin Panel</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>Project Information</h3>
+
+                <p>🎓 Diploma CSE Industrial Training</p>
+
+                <p>💻 HTML, CSS & JavaScript</p>
+
+                <p>👥 Developed by 5 Students</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© 2026 MediCare+ | All Rights Reserved</p>
+
+            <p>Designed by Diploma CSE Students</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

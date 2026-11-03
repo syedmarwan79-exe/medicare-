@@ -1,0 +1,763 @@
+/* ==========================================
+   MEDICARE+ 2.0
+   APPOINTMENT PAGE STYLES
+   BLUE & WHITE THEME
+========================================== */
+
+
+/* ==========================================
+   APPOINTMENT HERO
+========================================== */
+
+.appointment-hero {
+    max-width: 1250px;
+    margin: auto;
+    padding: 80px 25px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.appointment-hero-content {
+    animation: slideInLeft 0.8s ease;
+}
+
+.appointment-hero-content h1 {
+    color: #102a43;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.appointment-hero-content h1 span {
+    color: #1677ff;
+}
+
+.appointment-hero-content p {
+    max-width: 520px;
+    color: #718096;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   ANIMATED HERO IMAGE
+========================================== */
+
+.appointment-hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appointment-hero-image img {
+    width: 100%;
+    max-width: 420px;
+    height: 400px;
+    object-fit: contain;
+
+    border-radius: 30px;
+
+    animation: heroImageFloat 5s ease-in-out infinite;
+
+    filter: drop-shadow(
+        0 20px 40px rgba(22, 119, 255, 0.12)
+    );
+}
+
+@keyframes heroImageFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+
+/* Floating Medical Icons */
+
+.appointment-floating-icon {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    background: white;
+    border: 1px solid #e1eaf3;
+    border-radius: 16px;
+
+    font-size: 28px;
+
+    box-shadow: 0 10px 30px rgba(22, 119, 255, 0.1);
+
+    animation: iconBounce 3s ease-in-out infinite;
+}
+
+.icon-heart {
+    top: 8%;
+    left: 5%;
+}
+
+.icon-calendar {
+    bottom: 12%;
+    right: 5%;
+    animation-delay: 1.2s;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.08);
+    }
+}
+
+
+/* ==========================================
+   BOOKING SECTION
+========================================== */
+
+.booking-section {
+    padding: 90px 25px;
+    background: #f5faff;
+}
+
+.booking-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* LEFT INFO PANEL */
+
+.booking-info {
+    padding: 40px 30px;
+
+    background: white;
+    border: 1px solid #e1eaf3;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 35px rgba(22, 119, 255, 0.06);
+}
+
+.booking-info h2 {
+    color: #102a43;
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.booking-info > p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.booking-feature {
+    padding: 14px 18px;
+    margin-bottom: 12px;
+
+    background: #f0f7ff;
+    border: 1px solid #d5eaff;
+    border-radius: 12px;
+
+    color: #102a43;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.booking-feature:hover {
+    background: #e0efff;
+    transform: translateX(5px);
+}
+
+.booking-help {
+    margin-top: 30px;
+    padding: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #eaf5ff,
+        #f0f7ff
+    );
+
+    border-radius: 15px;
+}
+
+.booking-help h3 {
+    color: #102a43;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.booking-help p {
+    color: #718096;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.booking-help a {
+    color: #1677ff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.booking-help a:hover {
+    color: #075bd8;
+}
+
+
+/* RIGHT BOOKING FORM */
+
+.booking-form {
+    padding: 40px 35px;
+
+    background: white;
+    border: 1px solid #e1eaf3;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 35px rgba(22, 119, 255, 0.08);
+}
+
+.booking-form h3 {
+    color: #102a43;
+    font-size: 22px;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #102a43;
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    background: #f8fbff;
+    border: 1px solid #dbe7f3;
+    border-radius: 12px;
+
+    font-size: 13px;
+    color: #102a43;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #1677ff;
+    background: white;
+
+    box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.booking-disclaimer {
+    padding: 14px 16px;
+
+    background: #fff7e6;
+    border: 1px solid #ffe4a0;
+    border-radius: 10px;
+
+    color: #8a6d1b;
+    font-size: 11px;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.booking-submit {
+    width: 100%;
+    padding: 16px;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   DIGITAL APPOINTMENT CARD
+========================================== */
+
+.confirmation-section {
+    padding: 90px 25px;
+    text-align: center;
+    background: white;
+}
+
+.digital-card {
+    max-width: 550px;
+    margin: 0 auto 35px;
+
+    background: white;
+    border: 1px solid #d5eaff;
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 55px rgba(22, 119, 255, 0.12);
+
+    text-align: left;
+
+    animation: cardSlideUp 0.6s ease;
+}
+
+@keyframes cardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.digital-card-header {
+    padding: 35px 30px;
+
+    background: linear-gradient(
+        135deg,
+        #1677ff,
+        #075bd8,
+        #00a6e8
+    );
+
+    color: white;
+    text-align: center;
+}
+
+.digital-card-header h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.digital-card-header p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.digital-card-body {
+    padding: 30px;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eef3f9;
+
+    font-size: 13px;
+}
+
+.card-row:last-child {
+    border-bottom: none;
+}
+
+.card-row strong {
+    color: #102a43;
+    white-space: nowrap;
+}
+
+.card-row span {
+    color: #718096;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.digital-card-footer {
+    padding: 20px 30px;
+
+    background: #f0f7ff;
+
+    text-align: center;
+}
+
+.digital-card-footer p {
+    color: #1677ff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.digital-card-footer small {
+    color: #718096;
+    font-size: 11px;
+}
+
+.download-btn {
+    padding: 15px 30px;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   APPOINTMENT HISTORY
+========================================== */
+
+.history-section {
+    padding: 90px 25px;
+    background: #f5faff;
+}
+
+.history-container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.history-card {
+    padding: 25px 30px;
+    margin-bottom: 18px;
+
+    background: white;
+    border: 1px solid #e1eaf3;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    box-shadow: 0 5px 18px rgba(22, 119, 255, 0.05);
+
+    transition: 0.3s;
+}
+
+.history-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(22, 119, 255, 0.1);
+}
+
+.history-card h3 {
+    color: #102a43;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.history-card p {
+    color: #718096;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.history-status {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status-upcoming {
+    background: #e6f7ed;
+    color: #0e7a42;
+}
+
+.status-past {
+    background: #edf1f5;
+    color: #5b6870;
+}
+
+.status-cancelled {
+    background: #fff0f0;
+    color: #c0392b;
+}
+
+.cancel-btn {
+    padding: 9px 16px;
+
+    background: #fff0f0;
+    color: #c0392b;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cancel-btn:hover {
+    background: #ffe0e0;
+}
+
+.empty-history {
+    text-align: center;
+    color: #718096;
+    font-size: 15px;
+    padding: 45px;
+
+    background: white;
+    border: 1px dashed #d5eaff;
+    border-radius: 16px;
+}
+
+
+/* ==========================================
+   REMINDER SECTION
+========================================== */
+
+.reminder-section {
+    padding: 80px 25px;
+    background: white;
+}
+
+.reminder-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 40px;
+
+    background: linear-gradient(
+        135deg,
+        #eaf5ff,
+        #f0f7ff
+    );
+
+    border: 1px solid #d5eaff;
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.reminder-container h2 {
+    color: #102a43;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.reminder-container p {
+    color: #718096;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .appointment-hero {
+        gap: 30px;
+    }
+
+    .appointment-hero-content h1 {
+        font-size: 38px;
+    }
+
+    .booking-container {
+        gap: 30px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .appointment-hero {
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .appointment-hero-content h1 {
+        font-size: 33px;
+    }
+
+    .appointment-hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .appointment-hero-image img {
+        height: 300px;
+    }
+
+    .appointment-floating-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .booking-section {
+        padding: 65px 20px;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-info h2 {
+        font-size: 25px;
+    }
+
+    .booking-form {
+        padding: 30px 22px;
+    }
+
+    .digital-card {
+        width: 100%;
+    }
+
+    .card-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .card-row span {
+        text-align: left;
+    }
+
+    .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reminder-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 22px;
+    }
+
+    .reminder-container h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .appointment-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .appointment-hero-image img {
+        height: 250px;
+    }
+
+    .booking-info,
+    .booking-form {
+        padding: 25px 18px;
+    }
+
+}
+
+
+/* ==========================================
+   PRINT STYLES
+========================================== */
+
+@media print {
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #appointmentCard,
+    #appointmentCard * {
+        visibility: visible !important;
+    }
+
+    #appointmentCard {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .appointment-hero-image img,
+    .appointment-floating-icon,
+    .digital-card {
+        animation: none;
+    }
+
+    .history-card,
+    .booking-feature {
+        transition: none;
+    }
+
+}

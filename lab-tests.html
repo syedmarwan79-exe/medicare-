@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab Tests | MediCare+</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/lab-tests.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                🩺 MediCare<span>+</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="doctors.html">Doctors</a></li>
+
+                <li><a href="appointment.html">Appointments</a></li>
+
+                <li><a href="lab-tests.html" class="active">Lab Tests</a></li>
+
+                <li><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+
+            <a href="#lab-booking" class="nav-btn">
+                Book Lab Test
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- LAB TESTS HERO -->
+
+    <section class="lab-hero">
+
+        <div class="lab-hero-content">
+
+            <div class="hero-badge">
+                🧪 DIAGNOSTIC LAB SERVICES
+            </div>
+
+            <h1>
+                Book Your
+                <span>Lab Tests</span>
+                Online.
+            </h1>
+
+            <p>
+                Browse our sample diagnostic tests,
+                compare prices and schedule your
+                demo lab test booking in minutes.
+            </p>
+
+            <a href="#lab-booking" class="primary-btn">
+                🧪 Book Lab Test →
+            </a>
+
+        </div>
+
+        <div class="lab-hero-image">
+
+            <img
+                src="https://api.dicebear.com/9.x/notionists/svg?seed=LabDoctor&backgroundColor=d5eaff&size=500"
+                alt="Animated Lab Doctor"
+                class="lab-animated-doctor"
+            >
+
+            <div class="lab-floating-icon lf-1">🧪</div>
+
+            <div class="lab-floating-icon lf-2">🔬</div>
+
+            <div class="lab-floating-icon lf-3">💉</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AVAILABLE TESTS -->
+
+    <section class="lab-tests-section">
+
+        <div class="section-title">
+
+            <span>OUR DIAGNOSTIC SERVICES</span>
+
+            <h2>Available Lab Tests</h2>
+
+            <p>
+                Search and explore sample lab tests.
+            </p>
+
+        </div>
+
+        <div class="lab-search">
+
+            <input
+                type="text"
+                id="searchTest"
+                placeholder="🔍 Search lab tests..."
+            >
+
+            <select id="testCategoryFilter">
+
+                <option value="all">All Categories</option>
+
+                <option value="Blood">Blood Tests</option>
+
+                <option value="Imaging">Imaging</option>
+
+                <option value="Organ">Organ Function</option>
+
+            </select>
+
+        </div>
+
+        <div class="lab-tests-grid" id="labTestsGrid">
+
+            <!-- Tests added by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- LAB TEST BOOKING FORM -->
+
+    <section class="lab-booking-section" id="lab-booking">
+
+        <div class="section-title">
+
+            <span>SCHEDULE YOUR TEST</span>
+
+            <h2>Book a Lab Test</h2>
+
+            <p>
+                Fill in the form to create your
+                demo lab test booking.
+            </p>
+
+        </div>
+
+        <div class="lab-booking-container">
+
+            <div class="lab-booking-info">
+
+                <h2>
+                    Fast & Reliable
+                    Diagnostic Testing
+                </h2>
+
+                <p>
+                    Choose your test, select a date
+                    and receive a digital booking receipt.
+                </p>
+
+                <div class="lab-feature">
+                    ✅ Wide Range of Lab Tests
+                </div>
+
+                <div class="lab-feature">
+                    ✅ Instant Digital Receipt
+                </div>
+
+                <div class="lab-feature">
+                    ✅ Booking History
+                </div>
+
+                <div class="lab-feature">
+                    ✅ Easy Cancellation
+                </div>
+
+            </div>
+
+            <form id="labBookingForm" class="lab-booking-form">
+
+                <h3>📋 Lab Test Booking</h3>
+
+                <div class="form-group">
+
+                    <label for="labPatientName">
+                        Patient Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="labPatientName"
+                        placeholder="Enter sample name"
+                        maxlength="60"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="labTestSelect">
+                        Select Lab Test
+                    </label>
+
+                    <select id="labTestSelect" required>
+
+                        <option value="">Choose Test</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="labDate">
+                        Preferred Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="labDate"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="labTime">
+                        Preferred Time
+                    </label>
+
+                    <select id="labTime" required>
+
+                        <option value="">Select Time</option>
+
+                        <option value="08:00">08:00 AM</option>
+
+                        <option value="09:00">09:00 AM</option>
+
+                        <option value="10:00">10:00 AM</option>
+
+                        <option value="11:00">11:00 AM</option>
+
+                        <option value="13:00">01:00 PM</option>
+
+                        <option value="14:00">02:00 PM</option>
+
+                    </select>
+
+                </div>
+
+                <p class="booking-disclaimer">
+                    ⚠️ Educational demo only.
+                    No real lab test will be scheduled.
+                </p>
+
+                <button type="submit" class="primary-btn lab-submit">
+                    ✅ Confirm Lab Booking
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAB TEST RECEIPT -->
+
+    <section
+        class="lab-receipt-section"
+        id="labReceiptSection"
+        style="display:none;"
+    >
+
+        <div class="section-title">
+
+            <span>BOOKING CONFIRMED</span>
+
+            <h2>Lab Test Receipt ✅</h2>
+
+        </div>
+
+        <div class="lab-receipt-card" id="labReceiptCard">
+
+            <div class="lab-receipt-header">
+
+                <h2>🧪 MediCare+ Lab</h2>
+
+                <p>Digital Test Booking Receipt</p>
+
+            </div>
+
+            <div class="lab-receipt-body">
+
+                <div class="card-row">
+                    <strong>Receipt ID</strong>
+                    <span id="receiptId"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Patient</strong>
+                    <span id="receiptPatient"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Test Name</strong>
+                    <span id="receiptTest"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Category</strong>
+                    <span id="receiptCategory"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Date</strong>
+                    <span id="receiptDate"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Time</strong>
+                    <span id="receiptTime"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Sample Price</strong>
+                    <span id="receiptPrice"></span>
+                </div>
+
+            </div>
+
+            <div class="lab-receipt-footer">
+
+                <p>✅ Demo Booking Created</p>
+
+                <small>
+                    Not a real lab test booking.
+                </small>
+
+            </div>
+
+        </div>
+
+        <button class="primary-btn" id="printLabReceipt">
+            🖨️ Print / Save as PDF
+        </button>
+
+    </section>
+
+
+    <!-- LAB BOOKING HISTORY -->
+
+    <section class="lab-history-section">
+
+        <div class="section-title">
+
+            <span>MY LAB BOOKINGS</span>
+
+            <h2>Lab Test History</h2>
+
+        </div>
+
+        <div class="lab-history-container" id="labHistoryContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <h2>🩺 MediCare+</h2>
+
+                <p>
+                    Smart Hospital Management &
+                    Patient Companion System.
+                </p>
+
+                <p>
+                    Educational project prototype.
+                    Not a real hospital service.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="doctors.html">Doctors</a>
+
+                <a href="appointment.html">Appointments</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Services</h3>
+
+                <a href="lab-tests.html">Lab Tests</a>
+
+                <a href="chatbot.html">Smart Assistant</a>
+
+                <a href="admin.html">Admin Panel</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>Project Information</h3>
+
+                <p>🎓 Diploma CSE Industrial Training</p>
+
+                <p>💻 HTML, CSS & JavaScript</p>
+
+                <p>👥 Developed by 5 Students</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© 2026 MediCare+ | All Rights Reserved</p>
+
+            <p>Designed by Diploma CSE Students</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/lab-tests.js"></script>
+
+</body>
+</html>

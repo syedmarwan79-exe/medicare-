@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Assistant | MediCare+</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/chatbot.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                🩺 MediCare<span>+</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="doctors.html">Doctors</a></li>
+
+                <li><a href="appointment.html">Appointments</a></li>
+
+                <li><a href="lab-tests.html">Lab Tests</a></li>
+
+                <li><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+
+            <a href="appointment.html" class="nav-btn">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CHATBOT HERO -->
+
+    <section class="chatbot-hero">
+
+        <div class="chatbot-hero-content">
+
+            <div class="hero-badge">
+                🤖 SMART HOSPITAL ASSISTANT
+            </div>
+
+            <h1>
+                Ask Me Anything
+                <span>About MediCare+</span>
+            </h1>
+
+            <p>
+                Our rule-based chatbot can help you with
+                appointments, doctors, lab tests and more.
+            </p>
+
+        </div>
+
+        <div class="chatbot-hero-image">
+
+            <img
+                src="https://api.dicebear.com/9.x/notionists/svg?seed=ChatbotDoctor&backgroundColor=d5eaff&size=500"
+                alt="Animated Chatbot Doctor"
+                class="chatbot-animated-doctor"
+            >
+
+            <div class="chat-floating-icon cf-1">💬</div>
+
+            <div class="chat-floating-icon cf-2">🤖</div>
+
+            <div class="chat-floating-icon cf-3">❓</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHAT CONTAINER -->
+
+    <section class="chat-section">
+
+        <div class="section-title">
+
+            <span>START CHATTING</span>
+
+            <h2>Smart Hospital Assistant</h2>
+
+            <p>
+                Type your question below or click
+                a suggestion button.
+            </p>
+
+        </div>
+
+
+        <div class="chat-container">
+
+
+            <!-- CHAT MESSAGES -->
+
+            <div class="chat-messages" id="chatMessages">
+
+                <div class="message bot-message">
+
+                    <div class="message-avatar">🤖</div>
+
+                    <div class="message-bubble">
+
+                        <p>
+                            Hello! 👋 Welcome to MediCare+
+                            Smart Assistant.
+                        </p>
+
+                        <p>
+                            I can help you with:
+                        </p>
+
+                        <ul>
+
+                            <li>📅 Appointment booking</li>
+
+                            <li>👨‍⚕️ Doctor information</li>
+
+                            <li>🧪 Lab test details</li>
+
+                            <li>📊 Dashboard features</li>
+
+                            <li>🏥 Hospital departments</li>
+
+                        </ul>
+
+                        <p>
+                            Type your question or click
+                            a suggestion below!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUGGESTION BUTTONS -->
+
+            <div class="chat-suggestions" id="chatSuggestions">
+
+                <button class="suggestion-btn" data-query="appointment">
+                    📅 Book Appointment
+                </button>
+
+                <button class="suggestion-btn" data-query="doctors">
+                    👨‍⚕️ Find Doctors
+                </button>
+
+                <button class="suggestion-btn" data-query="lab tests">
+                    🧪 Lab Tests
+                </button>
+
+                <button class="suggestion-btn" data-query="dashboard">
+                    📊 Dashboard
+                </button>
+
+                <button class="suggestion-btn" data-query="departments">
+                    🏥 Departments
+                </button>
+
+                <button class="suggestion-btn" data-query="emergency">
+                    🚑 Emergency
+                </button>
+
+            </div>
+
+
+            <!-- CHAT INPUT -->
+
+            <form class="chat-input-form" id="chatForm">
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Type your question..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" class="chat-send-btn">
+                    Send ➤
+                </button>
+
+            </form>
+
+
+            <p class="chat-disclaimer">
+                ⚠️ This is a rule-based demo chatbot for
+                educational purposes only. It does not
+                provide real medical advice.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <h2>🩺 MediCare+</h2>
+
+                <p>
+                    Smart Hospital Management &
+                    Patient Companion System.
+                </p>
+
+                <p>
+                    Educational project prototype.
+                    Not a real hospital service.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="doctors.html">Doctors</a>
+
+                <a href="appointment.html">Appointments</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Services</h3>
+
+                <a href="lab-tests.html">Lab Tests</a>
+
+                <a href="chatbot.html">Smart Assistant</a>
+
+                <a href="admin.html">Admin Panel</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>Project Information</h3>
+
+                <p>🎓 Diploma CSE Industrial Training</p>
+
+                <p>💻 HTML, CSS & JavaScript</p>
+
+                <p>👥 Developed by 5 Students</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© 2026 MediCare+ | All Rights Reserved</p>
+
+            <p>Designed by Diploma CSE Students</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/chatbot.js"></script>
+
+</body>
+</html>

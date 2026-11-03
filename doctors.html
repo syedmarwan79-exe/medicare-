@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Doctors | MediCare+</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* DOCTORS PAGE */
+
+        .doctors-hero {
+            padding: 85px 25px;
+            text-align: center;
+            background: linear-gradient(135deg, #eaf5ff, #ffffff);
+        }
+
+        .doctors-hero h1 {
+            font-size: 43px;
+            color: #102a43;
+            margin-bottom: 15px;
+        }
+
+        .doctors-hero h1 span {
+            color: #1677ff;
+        }
+
+        .doctors-hero p {
+            color: #718096;
+            max-width: 600px;
+            margin: auto;
+            font-size: 14px;
+        }
+
+        .doctors-section {
+            padding: 85px 25px;
+        }
+
+        .doctor-search {
+            max-width: 900px;
+            margin: 0 auto 45px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .doctor-search input,
+        .doctor-search select {
+            padding: 15px;
+            border: 1px solid #dbe7f3;
+            border-radius: 12px;
+            outline: none;
+            background: white;
+            font-size: 13px;
+        }
+
+        .doctor-search input {
+            flex: 1;
+        }
+
+        .doctor-search select {
+            width: 240px;
+        }
+
+        .doctor-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .doctor-card {
+            background: white;
+            border: 1px solid #e2edf8;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(22, 119, 255, 0.07);
+            transition: 0.4s ease;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 45px rgba(22, 119, 255, 0.16);
+        }
+
+        .doctor-image {
+            height: 270px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #eaf5ff, #d8efff);
+            overflow: hidden;
+        }
+
+        .doctor-image img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+            animation: doctorFloat 4s ease-in-out infinite;
+            transition: 0.4s;
+        }
+
+        .doctor-card:hover .doctor-image img {
+            transform: scale(1.08);
+        }
+
+        @keyframes doctorFloat {
+            0%, 100% {
+                translate: 0 0;
+            }
+
+            50% {
+                translate: 0 -12px;
+            }
+        }
+
+        .doctor-info {
+            padding: 27px;
+        }
+
+        .doctor-info h3 {
+            color: #102a43;
+            font-size: 19px;
+        }
+
+        .specialty {
+            color: #1677ff;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+
+        .experience {
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .rating {
+            color: #f59e0b;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .doctor-info a {
+            display: block;
+            text-align: center;
+            background: #1677ff;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .doctor-info a:hover {
+            background: #075bd8;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #718096;
+            padding: 35px;
+        }
+
+        @media (max-width: 900px) {
+            .doctor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .doctor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-search {
+                flex-direction: column;
+            }
+
+            .doctor-search select {
+                width: 100%;
+            }
+
+            .doctors-hero h1 {
+                font-size: 31px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .doctor-image img {
+                animation: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                🩺 MediCare<span>+</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="doctors.html" class="active">Doctors</a></li>
+
+                <li><a href="appointment.html">Appointments</a></li>
+
+                <li><a href="lab-tests.html">Lab Tests</a></li>
+
+                <li><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+
+            <a href="appointment.html" class="nav-btn">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="doctors-hero">
+
+        <h1>
+            Meet Our <span>Specialist Doctors</span>
+        </h1>
+
+        <p>
+            Explore our sample doctor directory and find
+            the right medical specialization.
+        </p>
+
+    </section>
+
+
+    <!-- DOCTORS -->
+
+    <section class="doctors-section">
+
+        <div class="section-title">
+
+            <span>OUR MEDICAL SPECIALISTS</span>
+
+            <h2>Find Your Doctor</h2>
+
+            <p>
+                Search by doctor name or specialization.
+            </p>
+
+        </div>
+
+
+        <div class="doctor-search">
+
+            <input
+                type="text"
+                id="searchDoctor"
+                placeholder="🔍 Search doctors..."
+            >
+
+            <select id="specializationFilter">
+
+                <option value="all">
+                    All Departments
+                </option>
+
+                <option value="Cardiology">Cardiology</option>
+
+                <option value="Neurology">Neurology</option>
+
+                <option value="Orthopedics">Orthopedics</option>
+
+                <option value="Dentistry">Dentistry</option>
+
+                <option value="Pediatrics">Pediatrics</option>
+
+                <option value="General Medicine">General Medicine</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="doctor-grid" id="doctorGrid">
+
+            <!-- Doctors added using JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <h2>🩺 MediCare+</h2>
+
+                <p>
+                    Smart Hospital Management &
+                    Patient Companion System.
+                </p>
+
+                <p>
+                    Educational project prototype.
+                    Not a real hospital service.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="doctors.html">Doctors</a>
+
+                <a href="appointment.html">Appointments</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Services</h3>
+
+                <a href="lab-tests.html">Lab Tests</a>
+
+                <a href="chatbot.html">Smart Assistant</a>
+
+                <a href="admin.html">Admin Panel</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>Project Information</h3>
+
+                <p>🎓 Diploma CSE Industrial Training</p>
+
+                <p>💻 HTML, CSS & JavaScript</p>
+
+                <p>👥 Developed by 5 Students</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© 2026 MediCare+ | All Rights Reserved</p>
+
+            <p>Designed by Diploma CSE Students</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- PAGE JAVASCRIPT -->
+
+    <script src="js/doctors.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment | MediCare+</title>
+
+    <!-- GOOGLE FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- APPOINTMENT CSS -->
+
+    <link rel="stylesheet" href="css/appointment.css">
+
+</head>
+
+<body>
+
+
+    <!-- =================================
+         NAVBAR
+    ================================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                🩺 MediCare<span>+</span>
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="doctors.html">Doctors</a>
+                </li>
+
+                <li>
+                    <a href="appointment.html" class="active">
+                        Appointments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lab-tests.html">Lab Tests</a>
+                </li>
+
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+
+            </ul>
+
+
+            <a href="#booking" class="nav-btn">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         APPOINTMENT HERO
+    ================================== -->
+
+    <section class="appointment-hero">
+
+        <div class="appointment-hero-content">
+
+            <div class="hero-badge">
+                📅 SMART APPOINTMENT SYSTEM
+            </div>
+
+            <h1>
+                Book Your Doctor
+                <span>Appointment.</span>
+            </h1>
+
+            <p>
+                Schedule your demo hospital appointment
+                with our specialist doctors.
+
+                Choose your preferred doctor,
+                appointment date and time slot.
+            </p>
+
+
+            <a href="#booking" class="primary-btn">
+                Book Appointment →
+            </a>
+
+        </div>
+
+
+        <div class="appointment-hero-image">
+
+            <img
+                src="https://ik.imagekit.io/nbunyo4rh/doc%203.jpg"
+                alt="Animated healthcare illustration"
+            >
+
+            <div class="appointment-floating-icon icon-heart">
+                ❤️
+            </div>
+
+            <div class="appointment-floating-icon icon-calendar">
+                📅
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         APPOINTMENT BOOKING
+    ================================== -->
+
+    <section class="booking-section" id="booking">
+
+        <div class="section-title">
+
+            <span>BOOK YOUR VISIT</span>
+
+            <h2>Schedule an Appointment</h2>
+
+            <p>
+                Complete the form below to create
+                your demo appointment booking.
+            </p>
+
+        </div>
+
+
+
+        <div class="booking-container">
+
+
+            <!-- LEFT INFORMATION PANEL -->
+
+            <div class="booking-info">
+
+                <h2>
+                    Healthcare Made
+                    Simple & Convenient
+                </h2>
+
+                <p>
+                    MediCare+ helps you explore
+                    doctor availability and manage
+                    sample appointments easily.
+                </p>
+
+
+                <div class="booking-feature">
+                    ✅ Find Specialist Doctors
+                </div>
+
+                <div class="booking-feature">
+                    ✅ Easy Appointment Booking
+                </div>
+
+                <div class="booking-feature">
+                    ✅ Digital Appointment Card
+                </div>
+
+                <div class="booking-feature">
+                    ✅ Appointment History
+                </div>
+
+                <div class="booking-feature">
+                    ✅ Reminder Demo
+                </div>
+
+
+                <div class="booking-help">
+
+                    <h3>💙 Need Assistance?</h3>
+
+                    <p>
+                        Use our smart assistant
+                        to learn how appointment
+                        booking works.
+                    </p>
+
+                    <a href="chatbot.html">
+                        Open Smart Assistant →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT BOOKING FORM -->
+
+            <form id="appointmentForm" class="booking-form">
+
+                <h3>
+                    📋 Appointment Details
+                </h3>
+
+
+                <div class="form-group">
+
+                    <label for="patientName">
+                        Patient Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="patientName"
+                        placeholder="Enter sample patient name"
+                        maxlength="60"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="appointmentDoctor">
+                        Select Doctor
+                    </label>
+
+                    <select
+                        id="appointmentDoctor"
+                        required
+                    >
+
+                        <option value="">
+                            Choose Doctor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="appointmentDate">
+                        Appointment Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="appointmentTime">
+                        Appointment Time
+                    </label>
+
+                    <select
+                        id="appointmentTime"
+                        required
+                    >
+
+                        <option value="">
+                            Select Time Slot
+                        </option>
+
+                        <option value="09:00">
+                            09:00 AM
+                        </option>
+
+                        <option value="10:00">
+                            10:00 AM
+                        </option>
+
+                        <option value="11:00">
+                            11:00 AM
+                        </option>
+
+                        <option value="12:00">
+                            12:00 PM
+                        </option>
+
+                        <option value="14:00">
+                            02:00 PM
+                        </option>
+
+                        <option value="15:00">
+                            03:00 PM
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="appointmentReason">
+                        Reason for Visit (Optional)
+                    </label>
+
+                    <textarea
+                        id="appointmentReason"
+                        rows="3"
+                        maxlength="200"
+                        placeholder="Enter a fictional reason for this demo"
+                    ></textarea>
+
+                </div>
+
+
+                <p class="booking-disclaimer">
+                    ⚠️ Educational project only.
+                    No real hospital appointment will be booked.
+                    Please use fictional details, not private medical information.
+                </p>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn booking-submit"
+                >
+                    ✅ Confirm Appointment
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         DIGITAL APPOINTMENT CARD
+    ================================== -->
+
+    <section
+        class="confirmation-section"
+        id="confirmationSection"
+        style="display:none;"
+    >
+
+        <div class="section-title">
+
+            <span>BOOKING SUCCESSFUL</span>
+
+            <h2>Appointment Confirmed! ✅</h2>
+
+            <p>
+                Your digital appointment card
+                has been generated.
+            </p>
+
+        </div>
+
+
+
+        <div class="digital-card" id="appointmentCard">
+
+
+            <div class="digital-card-header">
+
+                <h2>🩺 MediCare+</h2>
+
+                <p>
+                    Digital Appointment Card
+                </p>
+
+            </div>
+
+
+
+            <div class="digital-card-body">
+
+                <div class="card-row">
+                    <strong>Booking ID</strong>
+                    <span id="cardBookingId"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Patient Name</strong>
+                    <span id="cardPatient"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Doctor</strong>
+                    <span id="cardDoctor"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Department</strong>
+                    <span id="cardDepartment"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Date</strong>
+                    <span id="cardDate"></span>
+                </div>
+
+                <div class="card-row">
+                    <strong>Time</strong>
+                    <span id="cardTime"></span>
+                </div>
+
+            </div>
+
+
+            <div class="digital-card-footer">
+
+                <p>
+                    ✅ Demo Booking Created
+                </p>
+
+                <small>
+                    Educational prototype only.
+                    Not valid at a real hospital.
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            class="primary-btn download-btn"
+            id="downloadCard"
+        >
+            🖨️ Print / Save as PDF
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================
+         APPOINTMENT HISTORY
+    ================================== -->
+
+    <section class="history-section" id="history">
+
+        <div class="section-title">
+
+            <span>MY APPOINTMENTS</span>
+
+            <h2>Appointment History</h2>
+
+            <p>
+                View your upcoming and previous
+                demo appointments.
+            </p>
+
+        </div>
+
+
+        <div
+            class="history-container"
+            id="historyContainer"
+        >
+
+            <!-- JavaScript will display bookings -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         REMINDER SECTION
+    ================================== -->
+
+    <section class="reminder-section">
+
+        <div class="reminder-container">
+
+            <div>
+
+                <h2>
+                    ⏰ Appointment Reminder
+                </h2>
+
+                <p>
+                    Check details of your next
+                    upcoming demo appointment.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                id="reminderBtn"
+            >
+                Check Reminder →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <h2>🩺 MediCare+</h2>
+
+                <p>
+                    Smart Hospital Management &
+                    Patient Companion System.
+                </p>
+
+                <p>
+                    Educational project prototype.
+                    Not a real hospital service.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="doctors.html">Doctors</a>
+
+                <a href="appointment.html">Appointments</a>
+
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Services</h3>
+
+                <a href="lab-tests.html">Lab Tests</a>
+
+                <a href="chatbot.html">Smart Assistant</a>
+
+                <a href="admin.html">Admin Panel</a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Project Information</h3>
+
+                <p>🎓 Diploma CSE Industrial Training</p>
+
+                <p>💻 HTML, CSS & JavaScript</p>
+
+                <p>👥 Developed by 5 Students</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 MediCare+ | All Rights Reserved
+            </p>
+
+            <p>
+                Designed & Developed by Diploma CSE Students
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- APPOINTMENT JAVASCRIPT -->
+
+    <script src="js/appointment.js"></script>
+
+</body>
+</html>

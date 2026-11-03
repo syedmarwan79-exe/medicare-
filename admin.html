@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MediCare+ 2.0</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Admin Navigation Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-user-shield logo-icon"></i>
+                MediCare+ <span>Admin</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-globe"></i> Patient Site</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Patient View</a>
+                <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Doctors List</a>
+                <a href="admin.html" class="active"><i class="fa-solid fa-sliders"></i> Admin Control</a>
+            </nav>
+            <div class="admin-badge">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Super Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Hero Banner -->
+    <section class="admin-hero">
+        <div class="container">
+            <div class="admin-hero-content">
+                <h1>Hospital Management Console</h1>
+                <p>Monitor patient appointments, diagnostic lab requests, revenue stream, and doctor rosters in real-time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container admin-main">
+
+        <!-- Quick Stats Overview -->
+        <section class="admin-stats-grid">
+            <div class="stat-card blue">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="statTotalRevenue">₹0</h3>
+                    <p>Total Revenue Collected</p>
+                </div>
+            </div>
+
+            <div class="stat-card cyan">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="statAppointments">0</h3>
+                    <p>Total Appointments</p>
+                </div>
+            </div>
+
+            <div class="stat-card purple">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-flask-vial"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="statLabBookings">0</h3>
+                    <p>Lab Tests Requested</p>
+                </div>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="statDoctors">6</h3>
+                    <p>Active Specialist Doctors</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Control Tabs & Search -->
+        <div class="admin-tab-bar">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="appointments">
+                    <i class="fa-solid fa-calendar-days"></i> Appointments
+                </button>
+                <button class="tab-btn" data-tab="labtests">
+                    <i class="fa-solid fa-vials"></i> Lab Bookings
+                </button>
+                <button class="tab-btn" data-tab="doctors">
+                    <i class="fa-solid fa-user-nurse"></i> Manage Doctors
+                </button>
+            </div>
+            <div class="admin-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="adminSearchInput" placeholder="Search patient, doctor, test...">
+            </div>
+        </div>
+
+        <!-- TAB 1: Appointments Table -->
+        <section id="appointmentsTab" class="admin-tab-content active">
+            <div class="table-card">
+                <div class="table-header">
+                    <h2><i class="fa-solid fa-list-check"></i> Patient Appointments</h2>
+                    <button class="btn-secondary-sm" id="btnExportAppointments">
+                        <i class="fa-solid fa-file-export"></i> Print List
+                    </button>
+                </div>
+                <div class="table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Patient Name</th>
+                                <th>Doctor</th>
+                                <th>Specialization</th>
+                                <th>Date & Time</th>
+                                <th>Emergency</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTableBody">
+                            <!-- JS Dynamic Injection -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: Lab Bookings Table -->
+        <section id="labtestsTab" class="admin-tab-content">
+            <div class="table-card">
+                <div class="table-header">
+                    <h2><i class="fa-solid fa-microscope"></i> Diagnostic Lab Requests</h2>
+                    <button class="btn-secondary-sm" id="btnExportLab">
+                        <i class="fa-solid fa-file-export"></i> Print List
+                    </button>
+                </div>
+                <div class="table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Request ID</th>
+                                <th>Patient Name</th>
+                                <th>Test Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Sample Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="labTableBody">
+                            <!-- JS Dynamic Injection -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: Manage Doctors Grid -->
+        <section id="doctorsTab" class="admin-tab-content">
+            <div class="table-card">
+                <div class="table-header">
+                    <h2><i class="fa-solid fa-user-doctor"></i> Hospital Doctor Directory</h2>
+                    <button class="btn-primary-sm" id="btnOpenAddDoctor">
+                        <i class="fa-solid fa-plus"></i> Add New Doctor
+                    </button>
+                </div>
+                <div class="admin-doctors-grid" id="adminDoctorsGrid">
+                    <!-- JS Dynamic Injection -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal: Add New Doctor -->
+    <div class="modal-overlay" id="addDoctorModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-user-plus"></i> Register New Specialist</h3>
+                <button class="modal-close" id="btnCloseModal">&times;</button>
+            </div>
+            <form id="addDoctorForm" class="modal-form">
+                <div class="form-group">
+                    <label for="docName">Doctor Name *</label>
+                    <input type="text" id="docName" placeholder="e.g. Dr. Rajesh Kumar" required>
+                </div>
+                <div class="form-group">
+                    <label for="docSpec">Specialization *</label>
+                    <select id="docSpec" required>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Dentistry">Dentistry</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="General Medicine">General Medicine</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="docExp">Experience (Years) *</label>
+                        <input type="text" id="docExp" placeholder="e.g. 10+ Years" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="docFee">Consultation Fee (₹) *</label>
+                        <input type="number" id="docFee" placeholder="800" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="docTiming">Available Timings *</label>
+                    <input type="text" id="docTiming" placeholder="e.g. Mon - Sat | 10:00 AM - 04:00 PM" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" id="btnCancelAdd">Cancel</button>
+                    <button type="submit" class="btn-submit"><i class="fa-solid fa-check"></i> Save Doctor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 MediCare+ 2.0 Admin System. Built for Diploma CSE Final Project.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

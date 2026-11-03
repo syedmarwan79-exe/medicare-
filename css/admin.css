@@ -1,0 +1,471 @@
+/* ==========================================================================
+   MediCare+ 2.0 - Hospital Admin Panel Stylesheet
+   ========================================================================== */
+
+/* Admin Hero Banner */
+.admin-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0284c7 100%);
+    color: #ffffff;
+    padding: 2.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.admin-hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.admin-hero-content p {
+    font-size: 1rem;
+    color: #94a3b8;
+    max-width: 650px;
+}
+
+.admin-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(2, 132, 199, 0.15);
+    color: #0284c7;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(2, 132, 199, 0.3);
+}
+
+/* Main Container */
+.admin-main {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* Stats Cards Grid */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.stat-card.blue .stat-icon { background: #e0f2fe; color: #0284c7; }
+.stat-card.cyan .stat-icon { background: #ecfeff; color: #0891b2; }
+.stat-card.purple .stat-icon { background: #f3e8ff; color: #9333ea; }
+.stat-card.orange .stat-icon { background: #ffedd5; color: #ea580c; }
+
+.stat-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.1;
+}
+
+.stat-info p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Tab Bar & Search */
+.admin-tab-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn:hover {
+    color: #0284c7;
+    background: #f1f5f9;
+}
+
+.tab-btn.active {
+    background: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.admin-search-box {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 8px 14px;
+    min-width: 280px;
+}
+
+.admin-search-box i {
+    color: #94a3b8;
+    margin-right: 8px;
+}
+
+.admin-search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #1e293b;
+}
+
+/* Tabs Content Visibility */
+.admin-tab-content {
+    display: none;
+}
+
+.admin-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tables Section */
+.table-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-header h2 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.admin-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.admin-table tr:hover {
+    background: #f8fafc;
+}
+
+/* Status Badges */
+.badge-status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-status.confirmed { background: #dcfce7; color: #166534; }
+.badge-status.completed { background: #e0f2fe; color: #075985; }
+.badge-status.cancelled { background: #fee2e2; color: #991b1b; }
+.badge-status.pending { background: #fef3c7; color: #92400e; }
+
+.badge-emergency {
+    background: #ef4444;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    animation: pulse 1.5s infinite;
+}
+
+/* Table Buttons */
+.btn-action-sm {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-right: 4px;
+}
+
+.btn-complete { background: #10b981; color: white; }
+.btn-complete:hover { background: #059669; }
+
+.btn-cancel-act { background: #ef4444; color: white; }
+.btn-cancel-act:hover { background: #dc2626; }
+
+.btn-delete { background: #64748b; color: white; }
+.btn-delete:hover { background: #475569; }
+
+.btn-secondary-sm {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.btn-secondary-sm:hover { background: #e2e8f0; }
+
+.btn-primary-sm {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.btn-primary-sm:hover { background: #0369a1; }
+
+/* Doctor Grid inside Admin */
+.admin-doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.admin-doc-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.admin-doc-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border: 3px solid #e0f2fe;
+}
+
+.admin-doc-card h4 {
+    color: #0f172a;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-doc-card p {
+    color: #0284c7;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.admin-doc-meta {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-box {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h3 {
+    color: #0f172a;
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.modal-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.modal-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.4rem;
+}
+
+.modal-form input, .modal-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.btn-cancel {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Empty State */
+.empty-table-msg {
+    text-align: center;
+    padding: 2.5rem;
+    color: #94a3b8;
+    font-weight: 500;
+}

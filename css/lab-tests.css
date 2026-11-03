@@ -1,0 +1,606 @@
+/* ==========================================
+   MEDICARE+ 2.0
+   LAB TESTS PAGE STYLES
+========================================== */
+
+
+/* HERO */
+
+.lab-hero {
+    max-width: 1250px;
+    margin: auto;
+    padding: 80px 25px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.lab-hero-content {
+    animation: slideInLeft 0.8s ease;
+}
+
+.lab-hero-content h1 {
+    color: #102a43;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.lab-hero-content h1 span {
+    color: #1677ff;
+}
+
+.lab-hero-content p {
+    max-width: 520px;
+    color: #718096;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+
+/* ANIMATED LAB DOCTOR */
+
+.lab-hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lab-animated-doctor {
+    width: 100%;
+    max-width: 420px;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 30px;
+
+    animation: labDoctorFloat 5s ease-in-out infinite;
+
+    filter: drop-shadow(
+        0 20px 40px rgba(22, 119, 255, 0.12)
+    );
+
+    transition: transform 0.4s;
+}
+
+.lab-animated-doctor:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+@keyframes labDoctorFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-14px) rotate(1.5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(-1.5deg);
+    }
+
+}
+
+
+/* FLOATING LAB ICONS */
+
+.lab-floating-icon {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    background: white;
+    border: 1px solid #d5eaff;
+    border-radius: 16px;
+
+    font-size: 28px;
+
+    box-shadow: 0 10px 30px rgba(22, 119, 255, 0.1);
+
+    z-index: 2;
+}
+
+.lf-1 {
+    top: 5%;
+    left: 0;
+    animation: labIconBounce 3.2s ease-in-out infinite;
+}
+
+.lf-2 {
+    top: 20%;
+    right: -5%;
+    animation: labIconBounce 3.8s ease-in-out infinite;
+    animation-delay: 0.7s;
+}
+
+.lf-3 {
+    bottom: 10%;
+    left: 5%;
+    animation: labIconBounce 3.5s ease-in-out infinite;
+    animation-delay: 1.3s;
+}
+
+@keyframes labIconBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(12deg) scale(1.12);
+    }
+
+}
+
+.lab-floating-icon::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(22, 119, 255, 0.08);
+    border-radius: 16px;
+    animation: labIconPulse 2.5s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes labIconPulse {
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+
+}
+
+
+/* TESTS SECTION */
+
+.lab-tests-section {
+    padding: 90px 25px;
+    background: #f5faff;
+}
+
+.lab-search {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.lab-search input,
+.lab-search select {
+    padding: 15px;
+    border: 1px solid #dbe7f3;
+    border-radius: 12px;
+    outline: none;
+    background: white;
+    font-size: 13px;
+}
+
+.lab-search input {
+    flex: 1;
+}
+
+.lab-search select {
+    width: 220px;
+}
+
+.lab-search input:focus,
+.lab-search select:focus {
+    border-color: #1677ff;
+    box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.08);
+}
+
+.lab-tests-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+
+/* TEST CARD */
+
+.lab-test-card {
+    background: white;
+    border: 1px solid #e1eaf3;
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(22, 119, 255, 0.06);
+
+    transition: 0.35s ease;
+}
+
+.lab-test-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(22, 119, 255, 0.14);
+    border-color: #b9d9ff;
+}
+
+.lab-test-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf5ff;
+    border-radius: 20px;
+
+    font-size: 34px;
+
+    animation: testIconPulse 3s ease-in-out infinite;
+}
+
+@keyframes testIconPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+.lab-test-card h3 {
+    color: #102a43;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.lab-test-category {
+    color: #1677ff;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.lab-test-price {
+    color: #102a43;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.lab-test-price span {
+    font-size: 12px;
+    color: #718096;
+    font-weight: 400;
+}
+
+.lab-test-card button {
+    width: 100%;
+    padding: 12px;
+    background: #1677ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.lab-test-card button:hover {
+    background: #075bd8;
+}
+
+.no-tests {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #718096;
+    padding: 35px;
+}
+
+
+/* BOOKING SECTION */
+
+.lab-booking-section {
+    padding: 90px 25px;
+    background: white;
+}
+
+.lab-booking-container {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.lab-booking-info {
+    padding: 40px 30px;
+    background: #f5faff;
+    border: 1px solid #e1eaf3;
+    border-radius: 22px;
+}
+
+.lab-booking-info h2 {
+    color: #102a43;
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.lab-booking-info > p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.lab-feature {
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    background: white;
+    border: 1px solid #d5eaff;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #102a43;
+    transition: 0.3s;
+}
+
+.lab-feature:hover {
+    background: #eaf5ff;
+    transform: translateX(5px);
+}
+
+.lab-booking-form {
+    padding: 40px 35px;
+    background: white;
+    border: 1px solid #e1eaf3;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(22, 119, 255, 0.08);
+}
+
+.lab-booking-form h3 {
+    color: #102a43;
+    font-size: 22px;
+    margin-bottom: 28px;
+}
+
+.lab-submit {
+    width: 100%;
+    padding: 16px;
+    font-size: 15px;
+}
+
+
+/* RECEIPT */
+
+.lab-receipt-section {
+    padding: 90px 25px;
+    text-align: center;
+    background: #f5faff;
+}
+
+.lab-receipt-card {
+    max-width: 550px;
+    margin: 0 auto 35px;
+    background: white;
+    border: 1px solid #d5eaff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 55px rgba(22, 119, 255, 0.12);
+    text-align: left;
+    animation: cardSlideUp 0.6s ease;
+}
+
+.lab-receipt-header {
+    padding: 35px 30px;
+    background: linear-gradient(135deg, #1677ff, #075bd8, #00a6e8);
+    color: white;
+    text-align: center;
+}
+
+.lab-receipt-header h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.lab-receipt-header p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.lab-receipt-body {
+    padding: 30px;
+}
+
+.lab-receipt-footer {
+    padding: 20px 30px;
+    background: #f0f7ff;
+    text-align: center;
+}
+
+.lab-receipt-footer p {
+    color: #1677ff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.lab-receipt-footer small {
+    color: #718096;
+    font-size: 11px;
+}
+
+
+/* HISTORY */
+
+.lab-history-section {
+    padding: 90px 25px;
+    background: white;
+}
+
+.lab-history-container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.lab-history-card {
+    padding: 22px 28px;
+    margin-bottom: 15px;
+    background: #f8fbff;
+    border: 1px solid #e1eaf3;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.lab-history-card:hover {
+    box-shadow: 0 10px 25px rgba(22, 119, 255, 0.08);
+    transform: translateY(-3px);
+}
+
+.lab-history-card h3 {
+    color: #102a43;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.lab-history-card p {
+    color: #718096;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.empty-lab-history {
+    text-align: center;
+    color: #718096;
+    padding: 40px;
+    background: #f8fbff;
+    border: 1px dashed #d5eaff;
+    border-radius: 14px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+
+    .lab-tests-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .lab-hero {
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .lab-hero-content h1 {
+        font-size: 33px;
+    }
+
+    .lab-animated-doctor {
+        height: 300px;
+    }
+
+    .lab-floating-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .lab-tests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lab-search {
+        flex-direction: column;
+    }
+
+    .lab-search select {
+        width: 100%;
+    }
+
+    .lab-booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-history-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .lab-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .lab-tests-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lab-animated-doctor,
+    .lab-floating-icon,
+    .lab-floating-icon::after,
+    .lab-test-icon {
+        animation: none !important;
+    }
+
+}
+
+@media print {
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #labReceiptCard,
+    #labReceiptCard * {
+        visibility: visible !important;
+    }
+
+    #labReceiptCard {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+}
