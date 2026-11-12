@@ -4,27 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Our Doctors | MediCare+</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-
-        /* DOCTORS PAGE */
-
+        /* ================= DOCTORS PAGE ================= */
         .doctors-hero {
-            padding: 85px 25px;
+            padding: 70px 25px 40px;
             text-align: center;
             background: linear-gradient(135deg, #eaf5ff, #ffffff);
         }
 
         .doctors-hero h1 {
-            font-size: 43px;
+            font-size: clamp(32px, 4.5vw, 44px);
             color: #102a43;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-weight: 800;
         }
 
         .doctors-hero h1 span {
@@ -35,15 +37,37 @@
             color: #718096;
             max-width: 600px;
             margin: auto;
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .doctors-section {
-            padding: 85px 25px;
+            padding: 50px 25px 90px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #1677ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: #102a43;
+            margin-top: 6px;
         }
 
         .doctor-search {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto 45px;
             display: flex;
             gap: 15px;
@@ -51,12 +75,21 @@
 
         .doctor-search input,
         .doctor-search select {
-            padding: 15px;
+            padding: 14px 18px;
             border: 1px solid #dbe7f3;
             border-radius: 12px;
             outline: none;
             background: white;
-            font-size: 13px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #102a43;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .doctor-search input:focus,
+        .doctor-search select:focus {
+            border-color: #1677ff;
+            box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.12);
         }
 
         .doctor-search input {
@@ -64,87 +97,85 @@
         }
 
         .doctor-search select {
-            width: 240px;
+            width: 250px;
+            cursor: pointer;
         }
 
         .doctor-grid {
-            max-width: 1200px;
-            margin: auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+            gap: 30px;
         }
 
         .doctor-card {
             background: white;
             border: 1px solid #e2edf8;
-            border-radius: 22px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(22, 119, 255, 0.07);
-            transition: 0.4s ease;
+            box-shadow: 0 8px 25px rgba(22, 119, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
 
         .doctor-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 45px rgba(22, 119, 255, 0.16);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(22, 119, 255, 0.14);
         }
 
+        /* Fixed Doctor Image container & image rendering */
         .doctor-image {
+            width: 100%;
             height: 270px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #eaf5ff, #d8efff);
+            background: #eaf5ff;
             overflow: hidden;
+            position: relative;
         }
 
         .doctor-image img {
-            width: 85%;
-            height: 85%;
-            object-fit: contain;
-            animation: doctorFloat 4s ease-in-out infinite;
-            transition: 0.4s;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.4s ease;
         }
 
         .doctor-card:hover .doctor-image img {
-            transform: scale(1.08);
-        }
-
-        @keyframes doctorFloat {
-            0%, 100% {
-                translate: 0 0;
-            }
-
-            50% {
-                translate: 0 -12px;
-            }
+            transform: scale(1.05);
         }
 
         .doctor-info {
-            padding: 27px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .doctor-info h3 {
             color: #102a43;
             font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
         .specialty {
             color: #1677ff;
             font-size: 13px;
             font-weight: 600;
-            margin: 8px 0;
+            margin-bottom: 6px;
         }
 
         .experience {
             font-size: 12px;
             color: #718096;
+            margin-bottom: 12px;
         }
 
         .rating {
             color: #f59e0b;
-            font-size: 14px;
-            margin: 15px 0;
+            font-size: 13px;
+            margin-bottom: 18px;
         }
 
         .doctor-info a {
@@ -152,27 +183,33 @@
             text-align: center;
             background: #1677ff;
             color: white;
-            padding: 13px;
+            padding: 12px;
             border-radius: 10px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            transition: 0.3s;
+            text-decoration: none;
+            margin-top: auto;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .doctor-info a:hover {
             background: #075bd8;
+            transform: translateY(-2px);
         }
 
         .no-results {
             grid-column: 1 / -1;
             text-align: center;
             color: #718096;
-            padding: 35px;
+            padding: 50px 20px;
+            font-size: 16px;
         }
 
-        @media (max-width: 900px) {
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 950px) {
             .doctor-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 22px;
             }
         }
 
@@ -189,205 +226,245 @@
                 width: 100%;
             }
 
-            .doctors-hero h1 {
-                font-size: 31px;
+            .doctors-hero {
+                padding: 45px 20px 25px;
             }
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            .doctor-image img {
-                animation: none;
-            }
-        }
-
     </style>
-
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-
     <header class="header">
-
         <nav class="navbar">
-
             <a href="index.html" class="logo">
                 🩺 MediCare<span>+</span>
             </a>
 
             <ul class="nav-links">
-
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="doctors.html" class="active">Doctors</a></li>
-
                 <li><a href="appointment.html">Appointments</a></li>
-
                 <li><a href="lab-tests.html">Lab Tests</a></li>
-
-                <li><a href="dashboard.html">Dashboard</a></li>
-
+                <li><a href="admin.html">Admin's Dashboard</a></li>
             </ul>
 
             <a href="appointment.html" class="nav-btn">
                 Book Appointment
             </a>
-
         </nav>
-
     </header>
 
-
     <!-- HERO -->
-
     <section class="doctors-hero">
-
-        <h1>
-            Meet Our <span>Specialist Doctors</span>
-        </h1>
-
-        <p>
-            Explore our sample doctor directory and find
-            the right medical specialization.
-        </p>
-
+        <h1>Meet Our <span>Specialist Doctors</span></h1>
+        <p>Explore our sample doctor directory and find the right medical specialization for your healthcare needs.</p>
     </section>
 
-
-    <!-- DOCTORS -->
-
+    <!-- DOCTORS SECTION -->
     <section class="doctors-section">
-
         <div class="section-title">
-
             <span>OUR MEDICAL SPECIALISTS</span>
-
             <h2>Find Your Doctor</h2>
-
-            <p>
-                Search by doctor name or specialization.
-            </p>
-
+            <p>Search by doctor name or specialization.</p>
         </div>
-
 
         <div class="doctor-search">
-
-            <input
-                type="text"
-                id="searchDoctor"
-                placeholder="🔍 Search doctors..."
-            >
-
+            <input type="text" id="searchDoctor" placeholder="🔍 Search doctors by name or specialty...">
             <select id="specializationFilter">
-
-                <option value="all">
-                    All Departments
-                </option>
-
+                <option value="all">All Departments</option>
                 <option value="Cardiology">Cardiology</option>
-
                 <option value="Neurology">Neurology</option>
-
                 <option value="Orthopedics">Orthopedics</option>
-
                 <option value="Dentistry">Dentistry</option>
-
                 <option value="Pediatrics">Pediatrics</option>
-
                 <option value="General Medicine">General Medicine</option>
-
             </select>
-
         </div>
 
-
+        <!-- DOCTORS GRID -->
         <div class="doctor-grid" id="doctorGrid">
+            <!-- Doctor 1: Cardiology -->
+            <div class="doctor-card" data-department="Cardiology" data-name="Dr. Sarah Jenkins">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" 
+                         alt="Dr. Sarah Jenkins"
+                         onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Sarah Jenkins</h3>
+                    <p class="specialty">Cardiology Specialist</p>
+                    <p class="experience">💼 10+ Years Experience</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (4.9 / 130 reviews)</p>
+                    <a href="appointment.html">Book Appointment</a>
+                </div>
+            </div>
 
-            <!-- Doctors added using JavaScript -->
+            <!-- Doctor 2: Neurology -->
+            <div class="doctor-card" data-department="Neurology" data-name="Dr. Marcus Vance">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" 
+                         alt="Dr. Marcus Vance"
+                         onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Marcus Vance</h3>
+                    <p class="specialty">Neurology Specialist</p>
+                    <p class="experience">💼 12+ Years Experience</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (4.8 / 95 reviews)</p>
+                    <a href="appointment.html">Book Appointment</a>
+                </div>
+            </div>
 
+            <!-- Doctor 3: Orthopedics -->
+            <div class="doctor-card" data-department="Orthopedics" data-name="Dr. Emily Chen">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1594824813583-1d07ec5f654f?auto=format&fit=crop&q=80&w=600" 
+                         alt="Dr. Emily Chen"
+                         onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Emily Chen</h3>
+                    <p class="specialty">Orthopedic Surgeon</p>
+                    <p class="experience">💼 8+ Years Experience</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (4.9 / 110 reviews)</p>
+                    <a href="appointment.html">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Doctor 4: Dentistry -->
+            <div class="doctor-card" data-department="Dentistry" data-name="Dr. James Wilson">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600" 
+                         alt="Dr. James Wilson"
+                         onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. James Wilson</h3>
+                    <p class="specialty">Dental Specialist</p>
+                    <p class="experience">💼 7+ Years Experience</p>
+                    <p class="rating">⭐⭐⭐⭐☆ (4.7 / 85 reviews)</p>
+                    <a href="appointment.html">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Doctor 5: Pediatrics -->
+            <div class="doctor-card" data-department="Pediatrics" data-name="Dr. Priya Patel">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&q=80&w=600" 
+                         alt="Dr. Priya Patel"
+                         onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Priya Patel</h3>
+                    <p class="specialty">Pediatrician</p>
+                    <p class="experience">💼 9+ Years Experience</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (5.0 / 140 reviews)</p>
+                    <a href="appointment.html">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Doctor 6: General Medicine -->
+            <div class="doctor-card" data-department="General Medicine" data-name="Dr. David Miller">
+                <div class="doctor-image">
+                    <img src="https://ik.imagekit.io/nbunyo4rh/doc%201.jpg" 
+                         alt="Dr. David Miller"
+                         onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. David Miller</h3>
+                    <p class="specialty">General Medicine</p>
+                    <p class="experience">💼 14+ Years Experience</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (4.9 / 150 reviews)</p>
+                    <a href="appointment.html">Book Appointment</a>
+                </div>
+            </div>
         </div>
-
     </section>
 
-
     <!-- FOOTER -->
-
     <footer>
-
         <div class="footer-container">
-
             <div class="footer-about">
-
                 <h2>🩺 MediCare+</h2>
-
-                <p>
-                    Smart Hospital Management &
-                    Patient Companion System.
-                </p>
-
-                <p>
-                    Educational project prototype.
-                    Not a real hospital service.
-                </p>
-
+                <p>Smart Hospital Management & Patient Companion System.</p>
+                <p>Educational project prototype. Not a real hospital service.</p>
             </div>
 
             <div class="footer-links">
-
                 <h3>Quick Links</h3>
-
                 <a href="index.html">Home</a>
-
                 <a href="doctors.html">Doctors</a>
-
                 <a href="appointment.html">Appointments</a>
-
                 <a href="dashboard.html">Dashboard</a>
-
             </div>
 
             <div class="footer-links">
-
                 <h3>Services</h3>
-
                 <a href="lab-tests.html">Lab Tests</a>
-
                 <a href="chatbot.html">Smart Assistant</a>
-
                 <a href="admin.html">Admin Panel</a>
-
             </div>
 
             <div class="footer-contact">
-
                 <h3>Project Information</h3>
-
                 <p>🎓 Diploma CSE Industrial Training</p>
-
                 <p>💻 HTML, CSS & JavaScript</p>
-
                 <p>👥 Developed by 5 Students</p>
-
             </div>
-
         </div>
 
         <div class="footer-bottom">
-
             <p>© 2026 MediCare+ | All Rights Reserved</p>
-
             <p>Designed by Diploma CSE Students</p>
-
         </div>
-
     </footer>
 
+    <!-- INTERACTIVE SEARCH & FILTER SCRIPT -->
+    <script>
+        const searchInput = document.getElementById('searchDoctor');
+        const filterSelect = document.getElementById('specializationFilter');
+        const doctorCards = document.querySelectorAll('.doctor-card');
+        const doctorGrid = document.getElementById('doctorGrid');
 
-    <!-- PAGE JAVASCRIPT -->
+        function filterDoctors() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            const selectedDept = filterSelect.value;
+            let visibleCount = 0;
 
-    <script src="js/doctors.js"></script>
+            doctorCards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const department = card.getAttribute('data-department');
+                const specialty = card.querySelector('.specialty').textContent.toLowerCase();
 
+                const matchesSearch = name.includes(searchText) || specialty.includes(searchText);
+                const matchesDept = (selectedDept === 'all' || department.toLowerCase() === selectedDept.toLowerCase());
+
+                if (matchesSearch && matchesDept) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Handle "No results found"
+            let noResultMsg = document.querySelector('.no-results');
+            if (visibleCount === 0) {
+                if (!noResultMsg) {
+                    noResultMsg = document.createElement('div');
+                    noResultMsg.className = 'no-results';
+                    noResultMsg.innerHTML = '🔍 No doctors found matching your criteria.';
+                    doctorGrid.appendChild(noResultMsg);
+                }
+            } else if (noResultMsg) {
+                noResultMsg.remove();
+            }
+        }
+
+        searchInput.addEventListener('input', filterDoctors);
+        filterSelect.addEventListener('change', filterDoctors);
+    </script>
 </body>
 </html>
